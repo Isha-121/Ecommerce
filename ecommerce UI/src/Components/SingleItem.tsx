@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import InnerSlider from './InnerSlider';
 import InnerVideo from './InnerVideo';
 import myMap from '../MyMap';
+import { Box, Button } from '@mui/material';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -44,7 +45,12 @@ const SingleItem = ({mainIndex, index, open, setOpen}:TProps)=> {
         open={open}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          {item.title} - Rs. {item.price}
+        <Box display="flex" justifyContent="space-around">
+        <Typography gutterBottom variant="h6" component="div">
+          {item.title}
+        </Typography>
+        <Button size="small" variant='contained'> Rs.{item.price} </Button>
+        </Box>
         </DialogTitle>
         <IconButton
           aria-label="close"
